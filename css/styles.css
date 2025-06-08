@@ -1,0 +1,528 @@
+/* Tea Time with Monique - Elegant Tea Theme */
+
+:root {
+    --primary: #d4a574;        /* Warm tea brown */
+    --secondary: #f4a0c4;      /* Rose tea pink */
+    --accent: #8b5a3c;         /* Dark tea */
+    --bg-dark: #2b1810;        /* Dark wood */
+    --bg-card: #3d2817;        /* Warm brown */
+    --text-primary: #fdf4e3;   /* Cream */
+    --text-secondary: #e8d5c4; /* Light cream */
+    --gradient-tea: linear-gradient(135deg, #d4a574 0%, #f4a0c4 100%);
+    --gradient-rose: linear-gradient(135deg, #f4a0c4 0%, #ffd4e5 100%);
+    --gradient-steam: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(244, 160, 196, 0.1) 0%, transparent 50%);
+}
+/* Particles Background - now with floating tea leaves */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(to bottom, #2b1810 0%, #3d2817 100%);
+}
+
+/* Tea Steam Animation */
+.tea-steam-container {
+    position: fixed;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.steam {
+    position: absolute;
+    width: 60px;
+    height: 100px;
+    background: var(--gradient-steam);
+    filter: blur(10px);
+    opacity: 0;
+    animation: steamFloat 4s infinite;
+}
+
+.steam-1 { animation-delay: 0s; left: -30px; }
+.steam-2 { animation-delay: 1.5s; left: 0px; }
+.steam-3 { animation-delay: 3s; left: 30px; }
+
+@keyframes steamFloat {
+    0% {
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-200px) scaleX(1.5);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-400px) scaleX(2);
+        opacity: 0;
+    }
+}
+
+/* Header */
+.main-header {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    background: rgba(43, 24, 16, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(212, 165, 116, 0.3);
+    position: relative;
+}
+
+/* Teacup Animation */
+.teacup {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: teacupSway 3s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes teacupSway {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+.elegant-title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+}
+
+.logo-container h1.glitch {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    background: var(--gradient-tea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { filter: brightness(1) drop-shadow(0 0 20px rgba(212, 165, 116, 0.5)); }
+    50% { filter: brightness(1.2) drop-shadow(0 0 30px rgba(244, 160, 196, 0.8)); }
+}
+/* Glitch Effect - Subtle tea-themed */
+.glitch {
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(139, 90, 60, 0.3);
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch::before {
+    animation: glitch-1 0.3s infinite;
+    color: var(--primary);
+    z-index: -1;
+}
+
+.glitch::after {
+    animation: glitch-2 0.3s infinite;
+    color: var(--secondary);
+    z-index: -2;
+}
+
+@keyframes glitch-1 {
+    0%, 100% { clip-path: inset(0 0 0 0); }
+    20% { clip-path: inset(20% 0 60% 0); transform: translate(-1px, 1px); }
+}
+@keyframes glitch-2 {
+    0%, 100% { clip-path: inset(0 0 0 0); }
+    20% { clip-path: inset(30% 0 40% 0); transform: translate(1px, -1px); }
+}
+
+/* Header Elements */
+.subtitle {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-style: italic;
+    letter-spacing: 0.05em;
+}
+
+/* Stats */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(212, 165, 116, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+.stat {
+    text-align: center;
+    position: relative;
+}
+
+.stat-icon {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.stat:nth-child(1) .stat-icon { animation-delay: 0s; }
+.stat:nth-child(2) .stat-icon { animation-delay: 1s; }
+.stat:nth-child(3) .stat-icon { animation-delay: 2s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Navigation - Tea Service Menu */
+.category-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    background: rgba(212, 165, 116, 0.05);
+}
+
+.category-btn {
+    background: rgba(61, 40, 23, 0.8);
+    border: 2px solid var(--primary);
+    color: var(--text-primary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-family: Georgia, serif;
+    backdrop-filter: blur(5px);
+}
+.category-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(212, 165, 116, 0.4);
+    background: rgba(212, 165, 116, 0.2);
+}
+
+.category-btn.active {
+    background: var(--gradient-tea);
+    border-color: var(--secondary);
+    color: var(--bg-dark);
+    font-weight: bold;
+}
+
+.category-btn .icon {
+    font-size: 1.2rem;
+}
+
+/* Search - Tea Menu */
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: rgba(61, 40, 23, 0.8);
+    border: 2px solid var(--primary);
+    border-radius: 25px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: Georgia, serif;
+    transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+.search-input:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 30px rgba(244, 160, 196, 0.3);
+    background: rgba(61, 40, 23, 0.9);
+}
+
+/* Topics Grid */
+.content {
+    padding: 3rem 1rem;
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Topic Card - Tea Cup Style */
+.topic-card {
+    background: linear-gradient(135deg, rgba(61, 40, 23, 0.9) 0%, rgba(61, 40, 23, 0.7) 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(212, 165, 116, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.topic-card::before {
+    content: '☕';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 100px;
+    opacity: 0.1;
+    transform: rotate(-15deg);
+    transition: all 0.3s ease;
+}
+.topic-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary);
+    box-shadow: 0 10px 40px rgba(244, 160, 196, 0.3);
+    background: linear-gradient(135deg, rgba(61, 40, 23, 0.95) 0%, rgba(212, 165, 116, 0.2) 100%);
+}
+
+.topic-card:hover::before {
+    opacity: 0.2;
+    transform: rotate(-20deg) scale(1.1);
+}
+
+.topic-category {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: rgba(212, 165, 116, 0.2);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+.topic-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.topic-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.topic-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Modal - Tea Service */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(43, 24, 16, 0.95);
+    z-index: 1000;
+    overflow-y: auto;
+}
+.modal.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: linear-gradient(135deg, rgba(61, 40, 23, 0.98) 0%, rgba(61, 40, 23, 0.95) 100%);
+    border-radius: 20px;
+    position: relative;
+    animation: slideUp 0.3s ease;
+    border: 2px solid rgba(212, 165, 116, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+.modal-close:hover {
+    transform: rotate(90deg);
+    color: var(--secondary);
+}
+.modal-body {
+    padding: 3rem;
+    color: var(--text-primary);
+    line-height: 1.8;
+    font-family: Georgia, serif;
+}
+}
+
+/* Floating Menu */
+.floating-menu {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+}
+
+.fab-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient-tea);
+    border: none;
+    color: var(--bg-dark);
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.fab-btn:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+.fab-menu {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.fab-menu.active {
+    display: flex;
+}
+
+.fab-item {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fab-item:hover {
+    background: var(--primary);
+    color: var(--bg-dark);
+    transform: scale(1.1);
+}
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo-container h1 {
+        font-size: 2.5rem;
+    }
+    
+    .stats {
+        gap: 1.5rem;
+    }
+    
+    .topics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-body {
+        padding: 2rem;
+    }
+}
+
+/* Light mode - Afternoon tea theme */
+body.light-mode {
+    --bg-dark: #fdf4e3;           /* Cream */
+    --bg-card: #ffffff;           /* White china */
+    --text-primary: #3d2817;      /* Dark tea */
+    --text-secondary: #8b5a3c;    /* Medium tea */
+    --primary: #8b5a3c;           /* Dark tea for light mode */
+    --secondary: #d4a574;         /* Light tea */
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(244, 160, 196, 0.15) 0%, transparent 50%);
+}
