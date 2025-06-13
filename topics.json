@@ -1,5 +1,75 @@
 [
   {
+    "id": "quantum-computing-breakthrough",
+    "title": "Quantum Computing Revolution",
+    "category": "science",
+    "description": "How Google's Willow chip achieved quantum supremacy and what it means for the future of computing, encryption, and scientific discovery",
+    "date": "2024-12-11",
+    "views": 0,
+    "readTime": "6 min",
+    "file": "topics/science/quantum-computing-breakthrough.html"
+  },
+  {
+    "id": "ai-agents-revolution",
+    "title": "AI Agents Taking Over Your Job",
+    "category": "technology",
+    "description": "The workforce revolution nobody saw coming - how autonomous AI agents are changing work forever and how to adapt",
+    "date": "2024-12-11",
+    "views": 0,
+    "readTime": "7 min",
+    "file": "topics/technology/ai-agents-revolution.html"
+  },
+  {
+    "id": "longevity-breakthrough-2025",
+    "title": "Live to 120: Longevity Breakthrough",
+    "category": "health",
+    "description": "Why aging might be optional by 2030 - the latest breakthroughs in cellular reprogramming, senescent cell removal, and practical longevity strategies",
+    "date": "2024-12-11",
+    "views": 0,
+    "readTime": "8 min",
+    "file": "topics/health/longevity-breakthrough-2025.html"
+  },
+  {
+    "id": "climate-tipping-points",
+    "title": "Climate Tipping Points We've Already Crossed",
+    "category": "science",
+    "description": "The 6 critical climate thresholds we've already passed, their cascade effects, and practical adaptation strategies for the new reality",
+    "date": "2024-12-11",
+    "views": 0,
+    "readTime": "7 min",
+    "file": "topics/science/climate-tipping-points.html"
+  },
+  {
+    "id": "big-beautiful-bill-2025",
+    "title": "The One Big Beautiful Bill Act of 2025",
+    "category": "politics",
+    "description": "A comprehensive breakdown of the sweeping tax and spending bill that's reshaping America's economic landscape",
+    "date": "2025-06-06",
+    "views": 0,
+    "readTime": "5 min",
+    "file": "topics/politics/big-beautiful-bill-2025.html"
+  },
+  {
+    "id": "master-plan-2025",
+    "title": "Master Plan 2025 - Financial Freedom Strategy",
+    "category": "finance",
+    "description": "Seth & Monique's comprehensive roadmap to financial independence, including income streams, investment strategy, and timeline for reaching $5K monthly goal",
+    "date": "2025-12-07",
+    "views": 0,
+    "readTime": "8 min",
+    "file": "topics/finance/master-plan-2025.html"
+  },
+  {
+    "id": "gen-z-money-revolution",
+    "title": "Gen Z's Money Revolution",
+    "category": "culture",
+    "description": "How TikTok transformed personal finance forever - from FinTok to loud budgeting, and why Gen Z is the most financially savvy generation ever",
+    "date": "2024-12-11",
+    "views": 0,
+    "readTime": "6 min",
+    "file": "topics/culture/gen-z-money-revolution.html"
+  },
+  {
     "id": "blake-justin-feud-2025",
     "title": "Blake vs Justin: The $400M Feud That Broke Hollywood",
     "category": "culture",

@@ -87,10 +87,19 @@ body {
 .main-header {
     text-align: center;
     padding: 3rem 1rem 2rem;
-    background: rgba(43, 24, 16, 0.8);
+    background: 
+        linear-gradient(rgba(43, 24, 16, 0.85), rgba(43, 24, 16, 0.85)),
+        url('../assets/20250613_113824_elegant_hero_image_for_a_luxury_tea_website_featur_1024_1024_standard.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     backdrop-filter: blur(10px);
     border-bottom: 2px solid rgba(212, 165, 116, 0.3);
     position: relative;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Teacup Animation */
@@ -511,6 +520,92 @@ body {
     
     .modal-body {
         padding: 2rem;
+    }
+}
+
+/* About Section */
+.about-section {
+    padding: 4rem 2rem;
+    background: rgba(61, 40, 23, 0.6);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.portrait-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid var(--primary);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(212, 165, 116, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portrait-image:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        0 0 50px rgba(212, 165, 116, 0.5);
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-family: 'Georgia', serif;
+    position: relative;
+}
+
+.about-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-tea);
+    border-radius: 2px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-family: 'Georgia', serif;
+}
+
+/* Responsive for About Section */
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .portrait-image {
+        height: 250px;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    .about-section {
+        padding: 3rem 1rem;
     }
 }
 
